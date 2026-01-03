@@ -1,13 +1,17 @@
 import { Stack } from "expo-router";
 import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import "./globals.css";
 
 export default function RootLayout() {
   return (
     <>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
+      <SafeAreaProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="(modals)/add-entry" options={{ presentation: "modal", title: "Add Entry" }} />
+        </Stack>
+      </SafeAreaProvider>
     </>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function TabLayout() {
     return (
-        <Tabs>
+        <Tabs screenOptions={{ headerShown: false }}>
             <Tabs.Screen name="index" options={{ title: 'Home' }} />
             <Tabs.Screen name="charts" options={{ title: 'Charts' }} />
             <Tabs.Screen name="metrics" options={{ title: 'Metrics' }} />
